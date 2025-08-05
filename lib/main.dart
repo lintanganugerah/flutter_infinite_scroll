@@ -24,35 +24,55 @@ class MyApp extends StatelessWidget {
 
 class MainHomeScreen extends StatelessWidget {
   const MainHomeScreen({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 20,
-        title: const Text("Choose Page Below", style: TextStyle(fontSize: 16, color: Colors.white),),
+        title: const Text(
+          "Choose Page Below",
+          style: TextStyle(fontSize: 16, color: Colors.white),
+        ),
         centerTitle: true,
         backgroundColor: Colors.blueAccent,
       ),
-      body: SafeArea(child: Center(
-        child: Wrap(
-          crossAxisAlignment: WrapCrossAlignment.center,
-          alignment: WrapAlignment.center,
-          children: [
-            Container(
-              child: FilledButton(onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => FiniteScrollScreen10()));
-              }, child: const Text("Finite Scroll (10 Items)")),
-            ),
-            Container(
-              child: FilledButton(onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Infinitescrollscreen()));
-              }, child: const Text("Infinite Scroll")),
-            )
-          ],
+      body: SafeArea(
+        child: Center(
+          child: Wrap(
+            crossAxisAlignment: WrapCrossAlignment.center,
+            alignment: WrapAlignment.center,
+            children: [
+              Container(
+                child: FilledButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FiniteScrollScreen10(),
+                      ),
+                    );
+                  },
+                  child: const Text("Finite Scroll (10 Items)"),
+                ),
+              ),
+              Container(
+                child: FilledButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => InfiniteScrollScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text("Infinite Scroll"),
+                ),
+              ),
+            ],
+          ),
         ),
-      )),
+      ),
     );
   }
 }
-
