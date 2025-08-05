@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_infinite_scroll/FiniteScrollScreen10.dart';
+import 'package:flutter_infinite_scroll/InfiniteScrollScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +30,7 @@ class MainHomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 20,
-        title: Text("Choose Page Below", style: TextStyle(fontSize: 12, color: Colors.white),),
+        title: const Text("Choose Page Below", style: TextStyle(fontSize: 16, color: Colors.white),),
         centerTitle: true,
         backgroundColor: Colors.blueAccent,
       ),
@@ -44,7 +45,9 @@ class MainHomeScreen extends StatelessWidget {
               }, child: const Text("Finite Scroll (10 Items)")),
             ),
             Container(
-              child: FilledButton(onPressed: () {}, child: const Text("Infinite Scroll")),
+              child: FilledButton(onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Infinitescrollscreen()));
+              }, child: const Text("Infinite Scroll")),
             )
           ],
         ),
